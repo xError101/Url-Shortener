@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>URL Shortener</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			background: url('{{ url_for('static', filename='anime-moon-landscape.jpg') }}') no-repeat center center;
+			background-size: cover; /* Ensures the background image fills the screen */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+		/* Form and content container */
+		.form-container {
+			background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Input field styling */
+		input {
+			width: 300px;
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		/* Button styling */
+		button {
+			padding: 10px 20px;
+			background: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background: #0056b3;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Content and form container -->
+	<div class="form-container">
+		<h1>URL Shortener</h1>
+		<form method="POST" action="{{ url_for('index') }}">
+			<!-- Input field -->
+			<input type="url" name="long_url" placeholder="Enter the long URL" required>
+			<br>
+			<!-- Submit button -->
+			<button type="submit">Shorten</button>
+		</form>
+	</div>
+
+</body>
+</html>
